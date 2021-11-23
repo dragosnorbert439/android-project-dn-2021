@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bazaar_green">#00B5C0</color>
+    <color name="background_dark">#161616</color>
+    <color name="error">#FF1E1E</color>
+    <color name="B_dark">#212121</color>
+    <color name="B_white">#EEEEEE</color>
+    <color name="B_assistive_red">#EE3B02</color>
+    <color name="B_turq">#00B5C0</color>
 </resources>
