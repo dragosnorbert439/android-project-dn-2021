@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Bazaar_settings"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".Bazaar_settings">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,18 +17,92 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView3"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_marginStart="44dp"
             android:layout_marginEnd="44dp"
+            android:src="@mipmap/ic_holder_round"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@mipmap/ic_holder_round"/>
+            tools:ignore="ImageContrastCheck" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:text="User Name"
+            android:textColor="@color/B_white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/appCompatAutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input_field_bg"
+            android:hint="Email@gmail.com"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="@color/B_white"
+            android:textColorHint="@color/B_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/appCompatEditText5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input_field_bg"
+            android:hint="Username"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="@color/B_white"
+            android:textColorHint="@color/B_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatAutoCompleteTextView" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/appCompatEditText7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input_field_bg"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:text="Phone number"
+            android:textColor="@color/B_white"
+            android:textColorHint="@color/B_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatEditText5" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input_field_bg"
+            android:hint="Password"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="@color/B_white"
+            android:textColorHint="@color/B_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatEditText7" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
