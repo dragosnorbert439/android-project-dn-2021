@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bazaarSplashFragment3">
+    <fragment
+        android:id="@+id/bazaarSplashFragment3"
+        android:name="com.example.androidprojectdn2021.BazaarSplashFragment"
+        android:label="fragment_bazaar_splash"
+        tools:layout="@layout/fragment_bazaar_splash" >
+        <action
+            android:id="@+id/action_bazaarSplashFragment3_to_loadingFragment"
+            app:destination="@id/loadingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.example.androidprojectdn2021.LoadingFragment"
+        android:label="fragment_loading_fragment"
+        tools:layout="@layout/fragment_loading_fragment" >
+        <action
+            android:id="@+id/action_loadingFragment_to_bazaarLoginFragment"
+            app:destination="@id/bazaarLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bazaarLoginFragment"
+        android:name="com.example.androidprojectdn2021.BazaarLoginFragment"
+        android:label="fragment_bazaar_login_fragment"
+        tools:layout="@layout/fragment_bazaar_login_fragment" />
+</navigation>
