@@ -10,8 +10,11 @@
     <color name="bazaar_green">#00B5C0</color>
     <color name="background_dark">#161616</color>
     <color name="error">#FF1E1E</color>
-    <color name="B_dark">#212121</color>
+    <color name="B_dark_gray">#212121</color>
+    <color name="B_dark">#161616</color>
+    <color name="B_black">#000000</color>
     <color name="B_white">#EEEEEE</color>
     <color name="B_assistive_red">#EE3B02</color>
     <color name="B_turq">#00B5C0</color>
+    <color name="B_gray">#484848</color>
 </resources>

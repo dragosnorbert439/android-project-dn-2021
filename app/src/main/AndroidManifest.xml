@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidProjectDN2021">
         <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            />
+        <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/app_name">
