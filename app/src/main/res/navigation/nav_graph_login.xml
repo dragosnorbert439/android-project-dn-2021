@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/bazaarSplashFragment3">
+    app:startDestination="@id/loadingFragment">
     <fragment
-        android:id="@+id/bazaarSplashFragment3"
+        android:id="@+id/bazaarSplashFragment"
         android:name="com.example.androidprojectdn2021.fragments.BazaarSplashFragment"
         android:label="fragment_bazaar_splash"
         tools:layout="@layout/fragment_bazaar_splash" >
@@ -40,19 +40,4 @@
             android:id="@+id/action_bazaarRegisterFragment_to_bazaarLoginFragment"
             app:destination="@id/bazaarLoginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/bazaarTimelineFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarTimelineFragment"
-        android:label="fragment_bazaar_timeline"
-        tools:layout="@layout/fragment_bazaar_timeline" />
-    <fragment
-        android:id="@+id/bazaarMyFaresFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarMyFaresFragment"
-        android:label="fragment_bazaar_my_fares"
-        tools:layout="@layout/fragment_bazaar_my_fares" />
-    <fragment
-        android:id="@+id/bazaarMyMarketFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarMyMarketFragment"
-        android:label="fragment_bazaar_my_market"
-        tools:layout="@layout/fragment_bazaar_my_market" />
 </navigation>

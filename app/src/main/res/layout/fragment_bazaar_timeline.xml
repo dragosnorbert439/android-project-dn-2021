@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.BazaarTimelineFragment"
-    android:background="@color/B_dark">
+    android:id="@+id/fragment_bazaar_timeline"
+    android:background="@color/B_light_grey">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"

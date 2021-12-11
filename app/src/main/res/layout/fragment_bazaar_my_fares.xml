@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/B_dark"
+    android:background="@color/B_light_grey"
+    android:id="@+id/fragment_bazaar_my_fares"
     tools:context=".fragments.BazaarMyFaresFragment">
 
     <androidx.appcompat.widget.AppCompatTextView

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/bazaarTimelineFragment">
+
+    <fragment
+        android:id="@+id/bazaarTimelineFragment"
+        android:name="com.example.androidprojectdn2021.fragments.BazaarTimelineFragment"
+        android:label="fragment_bazaar_timeline"
+        tools:layout="@layout/fragment_bazaar_timeline" />
+    <fragment
+        android:id="@+id/bazaarMyMarketFragment"
+        android:name="com.example.androidprojectdn2021.fragments.BazaarMyMarketFragment"
+        android:label="fragment_bazaar_my_market"
+        tools:layout="@layout/fragment_bazaar_my_market" />
+    <fragment
+        android:id="@+id/bazaarMyFaresFragment"
+        android:name="com.example.androidprojectdn2021.fragments.BazaarMyFaresFragment"
+        android:label="fragment_bazaar_my_fares"
+        tools:layout="@layout/fragment_bazaar_my_fares" />
+</navigation>

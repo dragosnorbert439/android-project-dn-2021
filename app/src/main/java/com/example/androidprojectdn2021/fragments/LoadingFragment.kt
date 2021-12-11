@@ -24,7 +24,7 @@ class LoadingFragment : Fragment() {
                 Navigation.findNavController(it)
                 .navigate(R.id.action_loadingFragment_to_bazaarLoginFragment)
             }
-        },2000)
+        },1000)
         return inflater.inflate(R.layout.fragment_loading_fragment, container, false)
     }
 

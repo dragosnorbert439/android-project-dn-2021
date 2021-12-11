@@ -16,7 +16,7 @@ class BazaarTimelineFragment: Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_bazaar_splash, container, false)
+        return inflater.inflate(R.layout.fragment_bazaar_timeline, container, false)
     }
 
     companion object {

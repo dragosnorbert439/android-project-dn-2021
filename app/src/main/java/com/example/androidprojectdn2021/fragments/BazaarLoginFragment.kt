@@ -2,7 +2,6 @@ package com.example.androidprojectdn2021.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.AlarmClock
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,7 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
-import com.example.androidprojectdn2021.MainActivity
+import com.example.androidprojectdn2021.MarketActivity
 import com.example.androidprojectdn2021.R
 import com.example.androidprojectdn2021.databinding.FragmentBazaarLoginFragmentBinding
 import com.example.androidprojectdn2021.repository.Repository
@@ -65,8 +64,8 @@ class BazaarLoginFragment : Fragment() {
 
         loginViewModel.token.observe(viewLifecycleOwner){
             Log.d("dnj", "Navigate to MainActivity")
-            val intent = Intent (requireActivity(), MainActivity::class.java)
-            requireActivity().startActivity(intent)
+            val intent = Intent (getActivity(), MarketActivity::class.java)
+            getActivity()?.startActivity(intent)
         }
         return binding.root
     }

@@ -22,7 +22,7 @@ class BazaarSplashFragment : Fragment() {
         val handler = Handler()
         handler.postDelayed({
             view?.let { Navigation.findNavController(it).navigate(R.id.action_bazaarSplashFragment3_to_loadingFragment) }
-        },1000)
+        },500)
         return inflater.inflate(R.layout.fragment_bazaar_splash, container, false)
     }
 

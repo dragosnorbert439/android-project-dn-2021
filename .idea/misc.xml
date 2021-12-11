@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_bazaar_logo_coloured.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_eye.xml" value="0.2703125" />
@@ -20,6 +21,7 @@
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/rounded_button_2.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/activity_login.xml" value="0.24682971014492755" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/activity_market.xml" value="0.23822463768115942" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_forgot_password.xml" value="0.264" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_login_fragment.xml" value="0.4" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_my_fares.xml" value="0.2427536231884058" />
