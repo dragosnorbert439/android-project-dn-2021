@@ -36,7 +36,6 @@ class RegisterViewModel(val context: Context, val repository: Repository) : View
             Log.d("dnj", "${code.value}")
             Log.d("dnj", "RegisterViewModel - message: ${result.message}")
         } catch (e: Exception) {
-            // TODO: Extract HTTP error code into code variable
             Log.d("dnj", "RegisterViewModel - exception: ${e.message}")
             try {
                 code.value = e.message?.substring(5, 8)?.toInt()

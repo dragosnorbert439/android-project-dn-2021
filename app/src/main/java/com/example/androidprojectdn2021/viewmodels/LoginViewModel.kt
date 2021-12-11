@@ -23,8 +23,9 @@ class LoginViewModel(val context: Context, val repository: Repository) : ViewMod
         try {
             val result = repository.login(request)
             MyApplication.token = result.token
+            MyApplication.refresh_time = result.refresh_time
             token.value = result.token
-            Log.d("dnj", "MyApplication - token:  ${MyApplication.token}")
+            Log.d("dnj", "MyApplication - token: ${MyApplication.token}")
         } catch (e: Exception) {
             Log.d("dnj", "LoginViewModel - exception: ${e.toString()}")
         }

@@ -8,23 +8,11 @@
     android:theme="@style/Theme.AndroidProjectDN2021.Bazaar"
     tools:context=".MarketActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@color/B_dark_grey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </com.google.android.material.appbar.AppBarLayout>
-
     <fragment
         android:id="@+id/fragmentContainerViewMarket"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?actionBarSize"
         android:layout_marginBottom="?actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

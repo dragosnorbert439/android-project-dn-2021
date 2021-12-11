@@ -65,6 +65,8 @@ class BazaarLoginFragment : Fragment() {
         loginViewModel.token.observe(viewLifecycleOwner){
             Log.d("dnj", "Navigate to MainActivity")
             val intent = Intent (getActivity(), MarketActivity::class.java)
+            //intent.putExtra("token", loginViewModel.token.value)
+            //intent.putExtra("refresh_time", loginViewModel.user.value)
             getActivity()?.startActivity(intent)
         }
         return binding.root

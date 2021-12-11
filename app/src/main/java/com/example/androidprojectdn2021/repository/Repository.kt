@@ -13,8 +13,7 @@ class Repository {
         return RetrofitInstance.api.register(request)
     }
 
-
-    // MAIN ACTIVITY
+    // MARKET ACTIVITY
     suspend fun getProducts(token: String): ProductResponse {
         return RetrofitInstance.api.getProducts(token)
     }
