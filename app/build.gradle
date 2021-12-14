@@ -97,4 +97,7 @@ dependencies {
 
     // for FloatingActionButton
     implementation 'com.android.support:design:27.0.2'
+
+    // card view
+    implementation 'androidx.cardview:cardview:1.0.0'
 }

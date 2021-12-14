@@ -4,10 +4,10 @@
 
     <solid android:color="@color/B_white" />
 
-    <corners android:bottomRightRadius="16dp"
-        android:bottomLeftRadius="16dp"
-        android:topRightRadius="16dp"
-        android:topLeftRadius="16dp"
+    <corners android:bottomRightRadius="8dp"
+        android:bottomLeftRadius="8dp"
+        android:topRightRadius="8dp"
+        android:topLeftRadius="8dp"
         />
 
 

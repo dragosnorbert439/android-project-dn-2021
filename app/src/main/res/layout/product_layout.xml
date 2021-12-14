@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/rounded_corners_style_product">
+    android:layout_margin="12dp"
+    android:background="@drawable/rounded_corners_style_product"
+    android:elevation="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout10"
@@ -21,28 +23,37 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:text="Price/unit"
+            android:textColor="@color/B_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/productImageProductLayout"
             app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/productImageProductLayout"
+
+        <androidx.cardview.widget.CardView
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/productPriceTVProductLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_user" />
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/productImageProductLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_shopping_bag_24" />
+
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,15 +66,35 @@
         app:layout_constraintStart_toEndOf="@+id/constraintLayout10"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewUserImageProductLayout"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/appCompatImageView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_avatar" />
+
+        </androidx.cardview.widget.CardView>
+
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/userNameTVProductLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="34dp"
             android:text="User name holder"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayout11"
+            android:textColor="@color/B_grey"
+            app:layout_constraintStart_toEndOf="@+id/cardViewUserImageProductLayout"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -75,6 +106,7 @@
             android:layout_marginEnd="32dp"
             android:text="Product name holder"
             android:textSize="20sp"
+            android:textColor="@color/B_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/constraintLayout11"

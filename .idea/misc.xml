@@ -6,6 +6,8 @@
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable-v24/rounded_button_order_now.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable-v24/rounded_corners_style_product.xml" value="0.2703125" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/circle.xml" value="0.2703125" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_baseline_shopping_bag_24.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_bazaar_logo_coloured.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2703125" />
@@ -25,7 +27,7 @@
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/rounded_button_2.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/activity_login.xml" value="0.24682971014492755" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/activity_market.xml" value="0.23822463768115942" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/activity_market.xml" value="0.27722007722007724" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_forgot_password.xml" value="0.264" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_login_fragment.xml" value="0.4" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_my_fares.xml" value="0.2427536231884058" />
@@ -38,7 +40,7 @@
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_home.xml" value="0.25317028985507245" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_loading_fragment.xml" value="0.176" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_notifications.xml" value="0.24682971014492755" />
-        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/product_layout.xml" value="0.2" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/product_layout.xml" value="0.4" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/rounded_button.xml" value="0.25317028985507245" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
       </map>
