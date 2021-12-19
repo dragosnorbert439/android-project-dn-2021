@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_bazaarLoginFragment_to_bazaarRegisterFragment"
             app:destination="@id/bazaarRegisterFragment" />
+        <action
+            android:id="@+id/action_bazaarLoginFragment_to_bazaar_forgot_password"
+            app:destination="@id/bazaarForgotPassword" />
     </fragment>
     <fragment
         android:id="@+id/bazaarRegisterFragment"
@@ -38,6 +41,15 @@
         tools:layout="@layout/fragment_bazaar_register" >
         <action
             android:id="@+id/action_bazaarRegisterFragment_to_bazaarLoginFragment"
+            app:destination="@id/bazaarLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bazaarForgotPassword"
+        android:name="com.example.androidprojectdn2021.fragments.BazaarForgotPasswordFragment"
+        android:label="fragment_bazaar_forgot_password"
+        tools:layout="@layout/fragment_bazaar_forgot_password" >
+        <action
+            android:id="@+id/action_bazaarForgotPassword_to_bazaarLoginFragment"
             app:destination="@id/bazaarLoginFragment" />
     </fragment>
 </navigation>

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -17,9 +16,9 @@ import com.example.androidprojectdn2021.modelclasses.Product
 class DataAdapter(
     private var list: ArrayList<Product>,
     private val context: Context,
-    private val listener: OnItemClickListener,
-    private val listener2: OnItemLongClickListener,
-    private val listener3: OnOrderButtonClickListener
+    private val onItemClickListener: OnItemClickListener,
+    private val onItemLongClickListener: OnItemLongClickListener,
+    private val onOrderButtonClickListener: OnOrderButtonClickListener
 ) :
     RecyclerView.Adapter<DataAdapter.DataViewHolder>() {
 
@@ -51,24 +50,21 @@ class DataAdapter(
             orderButton.setOnClickListener {
                 val position = this.adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
-                    listener3.onButtonClick(position)
+                    onOrderButtonClickListener.onButtonClick(position)
                 }
             }
         }
 
         override fun onClick(p0: View?) {
             val currentPosition = this.adapterPosition
-            listener.onItemClick(currentPosition)
+            onItemClickListener.onItemClick(currentPosition)
         }
 
         override fun onLongClick(p0: View?): Boolean {
             val currentPosition = this.adapterPosition
-            listener2.onItemLongClick(currentPosition)
+            onItemLongClickListener.onItemLongClick(currentPosition)
             return true
         }
-
-        
-
     }
 
     // 2. Called only a few times = number of items on screen + a few more ones

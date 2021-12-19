@@ -38,12 +38,10 @@ class BazaarLoginFragment : Fragment() {
         binding.loginFragmentLogInButton.setOnClickListener {
             loginViewModel.user.value.let {
                 if (binding.loginFragmentUsernameTE.text?.isEmpty() == true) {
-                    Toast.makeText(context,"Username field empty!", Toast.LENGTH_LONG).show()
-                }
-                else if (binding.loginFragmentPasswordTE.text?.isEmpty() == true) {
-                    Toast.makeText(context,"Password field empty!", Toast.LENGTH_LONG).show()
-                }
-                else {
+                    Toast.makeText(context, "Username field empty!", Toast.LENGTH_LONG).show()
+                } else if (binding.loginFragmentPasswordTE.text?.isEmpty() == true) {
+                    Toast.makeText(context, "Password field empty!", Toast.LENGTH_LONG).show()
+                } else {
                     if (it != null) {
                         it.username = binding.loginFragmentUsernameTE.text.toString()
                     }
@@ -59,21 +57,23 @@ class BazaarLoginFragment : Fragment() {
 
         // SIGNUP BUTTON
         binding.signUpButton.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.action_bazaarLoginFragment_to_bazaarRegisterFragment)
+            Navigation.findNavController(binding.root)
+                .navigate(R.id.action_bazaarLoginFragment_to_bazaarRegisterFragment)
         }
 
-        loginViewModel.token.observe(viewLifecycleOwner){
+        // OBSERVE THE TOKEN
+        loginViewModel.token.observe(viewLifecycleOwner) {
             Log.d("dnj", "Navigate to MainActivity")
-            val intent = Intent (getActivity(), MarketActivity::class.java)
-            //intent.putExtra("token", loginViewModel.token.value)
-            //intent.putExtra("refresh_time", loginViewModel.user.value)
+            val intent = Intent(getActivity(), MarketActivity::class.java)
             getActivity()?.startActivity(intent)
         }
-        return binding.root
-    }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = BazaarLoginFragment()
+        // CLICK HERE - FORGOT PASSWORD
+        binding.clickHereTextView.setOnClickListener {
+            Navigation.findNavController(binding.root)
+                .navigate(R.id.action_bazaarLoginFragment_to_bazaar_forgot_password)
+        }
+
+        return binding.root
     }
 }

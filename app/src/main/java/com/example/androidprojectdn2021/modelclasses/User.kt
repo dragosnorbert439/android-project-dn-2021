@@ -41,7 +41,7 @@ data class RegisterResponse (
     var creation_time: Long
 )
 
-// RESET PASSWORD - UNUSED
+// RESET PASSWORD
 @JsonClass(generateAdapter = true)
 data class ResetPasswordRequest (
     var username: String,
@@ -54,7 +54,6 @@ data class ResetPasswordResponse (
     var message: String,
     var timestamp: Long
 )
-
 
 
 

@@ -6,12 +6,15 @@
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable-v24/rounded_button_order_now.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable-v24/rounded_corners_style_product.xml" value="0.2703125" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/arrow_drop_down.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/circle.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_baseline_shopping_bag_24.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_bazaar_logo_coloured.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_eye.xml" value="0.2703125" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_filter.xml" value="0.2703125" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_filter2.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_holder_background.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
@@ -23,6 +26,7 @@
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/ic_user.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/input_field_bg.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/logo_colore.xml" value="0.2703125" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/my_spinner_dropdown_item.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/rounded_button.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/drawable/rounded_button_2.xml" value="0.2703125" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/activity_login.xml" value="0.24682971014492755" />
@@ -33,9 +37,9 @@
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_my_fares.xml" value="0.2427536231884058" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_my_market.xml" value="0.2427536231884058" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_register.xml" value="0.4" />
-        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_settings.xml" value="0.4" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_splash.xml" value="0.176" />
-        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_timeline.xml" value="0.176" />
+        <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_bazaar_timeline.xml" value="0.264" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.25317028985507245" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_home.xml" value="0.25317028985507245" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/fragment_loading_fragment.xml" value="0.176" />
@@ -43,6 +47,7 @@
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/product_layout.xml" value="0.4" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/layout/rounded_button.xml" value="0.25317028985507245" />
         <entry key="..\:/Egyetem/AndroidProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/hidde/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.2477355072463768" />
       </map>
     </option>
   </component>

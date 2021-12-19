@@ -4,38 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".fragments.Bazaar_settings">
+    android:background="@color/B_dark"
+    tools:context=".fragments.BazaarSettingsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/B_dark_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/settingsBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/B_dark_grey"
+            android:backgroundTint="@color/B_dark_grey"
+            android:drawableLeft="@drawable/ic_arrow_to_left"
+            android:padding="8dp"
+            android:text="Settings"
+            android:textAllCaps="false"
+            android:textColor="@color/B_white"
+            android:textSize="22sp"
+
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="28dp"
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/appCompatImageView3"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:layout_marginStart="44dp"
-            android:layout_marginEnd="44dp"
-            android:src="@mipmap/ic_holder_round"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/userImageCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="80dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ImageContrastCheck" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/userImageHolderIV"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@mipmap/ic_holder_round"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
+
+
+        </androidx.cardview.widget.CardView>
+
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/appCompatTextView4"
+            android:id="@+id/userNameDisplayTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:gravity="center_horizontal"
             android:minHeight="48dp"
             android:padding="8dp"
             android:text="User Name"
@@ -43,10 +85,10 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/userImageCardView" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/appCompatAutoCompleteTextView"
+            android:id="@+id/emailTE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -55,13 +97,13 @@
             android:minHeight="48dp"
             android:padding="8dp"
             android:textColor="@color/B_white"
-            android:textColorHint="@color/B_white"
+            android:textColorHint="@color/B_light_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4" />
+            app:layout_constraintTop_toBottomOf="@+id/userNameDisplayTV" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/appCompatEditText5"
+            android:id="@+id/userNameTE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -70,13 +112,13 @@
             android:minHeight="48dp"
             android:padding="8dp"
             android:textColor="@color/B_white"
-            android:textColorHint="@color/B_white"
+            android:textColorHint="@color/B_light_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatAutoCompleteTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/emailTE" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/appCompatEditText7"
+            android:id="@+id/phoneNumberTE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -85,24 +127,27 @@
             android:padding="8dp"
             android:text="Phone number"
             android:textColor="@color/B_white"
-            android:textColorHint="@color/B_white"
+            android:textColorHint="@color/B_light_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatEditText5" />
+            app:layout_constraintTop_toBottomOf="@+id/userNameTE" />
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/publishButtonSettings"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="32dp"
             android:layout_marginTop="30dp"
-            android:background="@drawable/input_field_bg"
-            android:hint="Password"
+            android:background="@drawable/rounded_button"
             android:minHeight="48dp"
             android:padding="8dp"
+            android:text="Publish"
+            android:textAllCaps="false"
             android:textColor="@color/B_white"
             android:textColorHint="@color/B_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatEditText7" />
+            app:layout_constraintTop_toBottomOf="@+id/phoneNumberTE"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -9,7 +9,11 @@
         android:id="@+id/bazaarTimelineFragment"
         android:name="com.example.androidprojectdn2021.fragments.BazaarTimelineFragment"
         android:label="fragment_bazaar_timeline"
-        tools:layout="@layout/fragment_bazaar_timeline" />
+        tools:layout="@layout/fragment_bazaar_timeline" >
+        <action
+            android:id="@+id/action_bazaarTimelineFragment_to_bazaarSettingsFragment"
+            app:destination="@id/bazaarSettingsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/bazaarMyMarketFragment"
         android:name="com.example.androidprojectdn2021.fragments.BazaarMyMarketFragment"
@@ -20,4 +24,13 @@
         android:name="com.example.androidprojectdn2021.fragments.BazaarMyFaresFragment"
         android:label="fragment_bazaar_my_fares"
         tools:layout="@layout/fragment_bazaar_my_fares" />
+    <fragment
+        android:id="@+id/bazaarSettingsFragment"
+        android:name="com.example.androidprojectdn2021.fragments.BazaarSettingsFragment"
+        android:label="fragment_bazaar_settings"
+        tools:layout="@layout/fragment_bazaar_settings" >
+        <action
+            android:id="@+id/action_bazaarSettingsFragment_to_bazaarTimelineFragment"
+            app:destination="@id/bazaarTimelineFragment" />
+    </fragment>
 </navigation>

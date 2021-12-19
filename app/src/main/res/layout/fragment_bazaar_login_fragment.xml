@@ -206,7 +206,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Click here"
-                    android:textColor="@color/B_turq"
+                    android:textColor="@color/B_turqoise"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/appCompatTextView2"
                     app:layout_constraintTop_toTopOf="parent" />

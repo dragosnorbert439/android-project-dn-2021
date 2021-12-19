@@ -1,18 +1,14 @@
 package com.example.androidprojectdn2021.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
-import androidx.cardview.widget.CardView
+import android.widget.*
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,13 +18,24 @@ import com.example.androidprojectdn2021.modelclasses.Product
 import com.example.androidprojectdn2021.repository.Repository
 import com.example.androidprojectdn2021.viewmodels.MarketViewModel
 import com.example.androidprojectdn2021.viewmodels.MarketViewModelFactory
-import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.textfield.TextInputEditText
 
 class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
-    DataAdapter.OnItemLongClickListener, DataAdapter.OnOrderButtonClickListener {
+    DataAdapter.OnItemLongClickListener, DataAdapter.OnOrderButtonClickListener,
+    AdapterView.OnItemSelectedListener {
     lateinit var marketViewModel: MarketViewModel
     private lateinit var recycler_view: RecyclerView
     private lateinit var adapter: DataAdapter
+    private lateinit var filterButton: Button
+    private lateinit var filterView: View
+    private lateinit var searchButton: Button
+    private lateinit var searchView: View
+    private lateinit var searchInputText: TextInputEditText
+    private lateinit var settingsIV: ImageView
+    private lateinit var spinner: Spinner
+    private var sortMap = hashMapOf<String, String>()
+    private var latestOldest: Short = 1
+    private lateinit var switch: Switch
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +49,6 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_bazaar_timeline, container, false)
-        setHasOptionsMenu(true)
 
         // RECYCLER VIEW
         recycler_view = view.findViewById(R.id.recyclerViewTimeline)
@@ -54,24 +60,32 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
             adapter.notifyDataSetChanged()
         }
 
-        // APP BAR
         // SEARCH
-        view.findViewById<Button>(R.id.searchButtonActivityMarket).setOnClickListener {
-            Toast.makeText(context, "Search button clicked", Toast.LENGTH_SHORT).show()
-        }
+        searchButton = view.findViewById(R.id.searchButtonActivityMarket)
+        searchView = view.findViewById(R.id.searchView)
+        searchView.visibility = View.GONE
+        setUpSearchButton()
+
         // FILTER
-        view.findViewById<Button>(R.id.filterButtonActivityMarket).setOnClickListener {
-            Toast.makeText(context, "Filter button clicked", Toast.LENGTH_SHORT).show()
-        }
+        switch = view.findViewById(R.id.switchTimelineFragment)
+        setUpSwitch()
+        filterView = view.findViewById(R.id.filterView)
+        filterButton = view.findViewById(R.id.filterButtonActivityMarket)
+        searchInputText = view.findViewById(R.id.searchTextInput)
+        setUpFilterButton()
+
         // SETTINGS
-        view.findViewById<ImageView>(R.id.userIVTimelineFragment).setOnClickListener {
-            Toast.makeText(context, "Settings clicked", Toast.LENGTH_SHORT).show()
-        }
+        settingsIV = view.findViewById(R.id.userIVTimelineFragment)
+        setUpSettingsIV(view)
+
+        // DROPDOWN
+        spinner = view.findViewById(R.id.dropDownSpinnerTimelineFragment)
+        setUpDropDownSpinner()
 
         return view
     }
 
-    private fun setupRecyclerView(){
+    private fun setupRecyclerView() {
         adapter = DataAdapter(ArrayList<Product>(), this.requireContext(), this, this, this)
         recycler_view.adapter = adapter
         recycler_view.layoutManager = LinearLayoutManager(this.context)
@@ -83,9 +97,70 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
         recycler_view.setHasFixedSize(true)
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = BazaarTimelineFragment()
+    private fun setUpFilterButton() {
+        filterButton.setOnClickListener {
+            Toast.makeText(context, "Filter button clicked", Toast.LENGTH_SHORT).show()
+            if (filterView.isVisible) {
+                filterView.visibility = View.GONE
+            } else {
+                sortMap.remove("sort")
+                filterView.visibility = View.VISIBLE
+            }
+            marketViewModel.getProductsFiltered(sortMap)
+        }
+    }
+
+    private fun setUpSwitch() {
+        switch.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                latestOldest = -1
+                buttonView.text = "Descending"
+                Toast.makeText(requireContext(), "1", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                latestOldest = 1
+                buttonView.text = "Ascending"
+                Toast.makeText(requireContext(), "-1", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun setUpSearchButton() {
+        searchButton.setOnClickListener {
+            Toast.makeText(context, "Search button clicked", Toast.LENGTH_SHORT).show()
+            if (searchView.isVisible) {
+                searchView.visibility = View.GONE
+                if (searchInputText.text?.isEmpty() == false) {
+                    sortMap["filter"] = "{\"title\":\"${searchInputText.text.toString()}\"}"
+                }
+                else {
+                    sortMap.remove("filter")
+                }
+                marketViewModel.getProductsFiltered(sortMap)
+            }
+            else {
+                searchView.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun setUpSettingsIV(view: View) {
+        settingsIV.setOnClickListener {
+            Toast.makeText(context, "Settings clicked", Toast.LENGTH_SHORT).show()
+            Navigation.findNavController(view).navigate(R.id.action_bazaarTimelineFragment_to_bazaarSettingsFragment)
+        }
+    }
+
+    private fun setUpDropDownSpinner() {
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.filter_options_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = adapter
+        }
+        spinner.onItemSelectedListener = this
     }
 
     override fun onItemClick(position: Int) {
@@ -96,7 +171,25 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
         Toast.makeText(activity?.applicationContext, "onLongClick", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onItemOrderButtonClick(position: Int) {
-        Toast.makeText(activity?.applicationContext, "Order button clicked", Toast.LENGTH_SHORT).show()
+    override fun onButtonClick(position: Int) {
+        Toast.makeText(activity?.applicationContext, "Order button clicked", Toast.LENGTH_SHORT)
+            .show()
     }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        Toast.makeText(activity?.applicationContext, "item selected", Toast.LENGTH_SHORT).show()
+        when (spinner.getItemAtPosition(position).toString()) {
+            "Price" -> {
+                sortMap["sort"] = "{\"price_per_unit\":$latestOldest}"
+            }
+            "Seller" -> {
+                sortMap["sort"] = "{\"username\":$latestOldest}"
+            }
+            "Time" -> {
+                sortMap["sort"] = "{\"creation_time\":$latestOldest}"
+            }
+        }
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {}
 }
