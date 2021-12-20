@@ -55,6 +55,19 @@ data class ResetPasswordResponse (
     var timestamp: Long
 )
 
+// UPDATE USER
+@JsonClass(generateAdapter = true)
+data class UpdateUserRequest (
+    var username: String,
+    var email: String,
+    var phone_number: String
+)
 
+@JsonClass(generateAdapter = true)
+data class UpdateUserResponse (
+    var code: Int,
+    var updatedData: User,
+    var timestamp: Long
+)
 
 

@@ -4,13 +4,10 @@ import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.androidprojectdn2021.MyApplication
-import com.example.androidprojectdn2021.MyApplication.Companion.token
 import com.example.androidprojectdn2021.modelclasses.RegisterRequest
 import com.example.androidprojectdn2021.modelclasses.RegisterResponse
 import com.example.androidprojectdn2021.modelclasses.User
 import com.example.androidprojectdn2021.repository.Repository
-import java.io.File
 
 class RegisterViewModel(val context: Context, val repository: Repository) : ViewModel() {
     var user = MutableLiveData<User>()
@@ -31,7 +28,6 @@ class RegisterViewModel(val context: Context, val repository: Repository) : View
 
         try {
             val result = repository.register(request)
-            Log.d("dnj", "asd")
             code.value = result.code.toInt()
             Log.d("dnj", "${code.value}")
             Log.d("dnj", "RegisterViewModel - message: ${result.message}")

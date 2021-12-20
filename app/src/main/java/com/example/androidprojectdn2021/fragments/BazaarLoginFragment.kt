@@ -15,6 +15,7 @@ import com.example.androidprojectdn2021.MarketActivity
 import com.example.androidprojectdn2021.R
 import com.example.androidprojectdn2021.databinding.FragmentBazaarLoginFragmentBinding
 import com.example.androidprojectdn2021.repository.Repository
+import com.example.androidprojectdn2021.user.Token.token
 import com.example.androidprojectdn2021.viewmodels.LoginViewModel
 import com.example.androidprojectdn2021.viewmodels.LoginViewModelFactory
 
@@ -62,10 +63,17 @@ class BazaarLoginFragment : Fragment() {
         }
 
         // OBSERVE THE TOKEN
-        loginViewModel.token.observe(viewLifecycleOwner) {
-            Log.d("dnj", "Navigate to MainActivity")
-            val intent = Intent(getActivity(), MarketActivity::class.java)
-            getActivity()?.startActivity(intent)
+        token.observe(viewLifecycleOwner) {
+            if (it.isNotEmpty()) {
+                Log.d("dnj", "Navigate to MarketActivity")
+                val intent = Intent(activity, MarketActivity::class.java)
+                intent.putExtra("token", token.value)
+                intent.putExtra("username", loginViewModel.user.value?.username)
+                intent.putExtra("email", loginViewModel.user.value?.email)
+                intent.putExtra("phone_number", loginViewModel.user.value?.phone_number)
+                Log.d("dnj", "Login fragment: ${loginViewModel.user.value}")
+                activity?.startActivity(intent)
+            }
         }
 
         // CLICK HERE - FORGOT PASSWORD

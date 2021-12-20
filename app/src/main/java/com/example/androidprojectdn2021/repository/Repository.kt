@@ -26,4 +26,8 @@ class Repository {
     suspend fun getProductsFiltered(query: Map<String, String>): ProductResponse {
         return RetrofitInstance.api.getProductsFiltered(query)
     }
+
+    suspend fun updateUser(token: String, request: UpdateUserRequest): UpdateUserResponse {
+        return RetrofitInstance.api.updateUser(token, request)
+    }
 }

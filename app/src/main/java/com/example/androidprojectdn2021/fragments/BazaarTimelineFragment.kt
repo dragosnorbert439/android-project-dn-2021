@@ -1,6 +1,7 @@
 package com.example.androidprojectdn2021.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,15 +16,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.androidprojectdn2021.R
 import com.example.androidprojectdn2021.adapters.DataAdapter
 import com.example.androidprojectdn2021.modelclasses.Product
+import com.example.androidprojectdn2021.modelclasses.User
 import com.example.androidprojectdn2021.repository.Repository
 import com.example.androidprojectdn2021.viewmodels.MarketViewModel
 import com.example.androidprojectdn2021.viewmodels.MarketViewModelFactory
+import com.example.androidprojectdn2021.viewmodels.UserViewModel
+import com.example.androidprojectdn2021.viewmodels.UserViewModelFactory
 import com.google.android.material.textfield.TextInputEditText
 
 class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
     DataAdapter.OnItemLongClickListener, DataAdapter.OnOrderButtonClickListener,
     AdapterView.OnItemSelectedListener {
     lateinit var marketViewModel: MarketViewModel
+    lateinit var userViewModel: UserViewModel
     private lateinit var recycler_view: RecyclerView
     private lateinit var adapter: DataAdapter
     private lateinit var filterButton: Button
@@ -39,9 +44,9 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-        val factory = MarketViewModelFactory(Repository())
-        marketViewModel = ViewModelProvider(this, factory).get(MarketViewModel::class.java)
+        val marketViewModelFactory = MarketViewModelFactory(Repository())
+        marketViewModel =
+            ViewModelProvider(this, marketViewModelFactory).get(MarketViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -116,8 +121,7 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
                 latestOldest = -1
                 buttonView.text = "Descending"
                 Toast.makeText(requireContext(), "1", Toast.LENGTH_SHORT).show()
-            }
-            else {
+            } else {
                 latestOldest = 1
                 buttonView.text = "Ascending"
                 Toast.makeText(requireContext(), "-1", Toast.LENGTH_SHORT).show()
@@ -132,13 +136,11 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
                 searchView.visibility = View.GONE
                 if (searchInputText.text?.isEmpty() == false) {
                     sortMap["filter"] = "{\"title\":\"${searchInputText.text.toString()}\"}"
-                }
-                else {
+                } else {
                     sortMap.remove("filter")
                 }
                 marketViewModel.getProductsFiltered(sortMap)
-            }
-            else {
+            } else {
                 searchView.visibility = View.VISIBLE
             }
         }
@@ -147,7 +149,8 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
     private fun setUpSettingsIV(view: View) {
         settingsIV.setOnClickListener {
             Toast.makeText(context, "Settings clicked", Toast.LENGTH_SHORT).show()
-            Navigation.findNavController(view).navigate(R.id.action_bazaarTimelineFragment_to_bazaarSettingsFragment)
+            Navigation.findNavController(view)
+                .navigate(R.id.action_bazaarTimelineFragment_to_bazaarSettingsFragment)
         }
     }
 

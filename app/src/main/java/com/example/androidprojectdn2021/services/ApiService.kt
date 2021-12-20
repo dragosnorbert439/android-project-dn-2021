@@ -20,4 +20,10 @@ interface ApiService {
 
     @GET(Constants.GET_PRODUCT_URL)
     suspend fun getProductsFiltered(@HeaderMap query: Map<String, String>): ProductResponse
+
+    @POST(Constants.UPDATE_USER_URL)
+    suspend fun updateUser(
+        @Header("token") token: String,
+        @Body request: UpdateUserRequest
+    ): UpdateUserResponse
 } 
