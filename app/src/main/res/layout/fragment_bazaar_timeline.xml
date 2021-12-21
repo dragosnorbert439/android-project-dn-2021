@@ -9,7 +9,7 @@
     tools:context=".fragments.BazaarTimelineFragment">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarActivityMarket"
+        android:id="@+id/appBarTimelineFragment"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/B_dark_grey"
@@ -41,7 +41,7 @@
             </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/filterButtonActivityMarket"
+                android:id="@+id/filterButtonTimelineFragment"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_marginEnd="16dp"
@@ -52,13 +52,13 @@
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <Button
-                android:id="@+id/searchButtonActivityMarket"
+                android:id="@+id/searchButtonMyMarketFragment"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/ic_lense"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/filterButtonActivityMarket"
+                app:layout_constraintEnd_toStartOf="@+id/filterButtonTimelineFragment"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -84,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/B_turqoise"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarActivityMarket">
+        app:layout_constraintTop_toBottomOf="@+id/appBarTimelineFragment">
 
         <Switch
             android:id="@+id/switchTimelineFragment"

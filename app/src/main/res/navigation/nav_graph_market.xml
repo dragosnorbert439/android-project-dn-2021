@@ -18,7 +18,11 @@
         android:id="@+id/bazaarMyMarketFragment"
         android:name="com.example.androidprojectdn2021.fragments.BazaarMyMarketFragment"
         android:label="fragment_bazaar_my_market"
-        tools:layout="@layout/fragment_bazaar_my_market" />
+        tools:layout="@layout/fragment_bazaar_my_market" >
+        <action
+            android:id="@+id/action_bazaarMyMarketFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+    </fragment>
     <fragment
         android:id="@+id/bazaarMyFaresFragment"
         android:name="com.example.androidprojectdn2021.fragments.BazaarMyFaresFragment"
@@ -33,4 +37,9 @@
             android:id="@+id/action_bazaarSettingsFragment_to_bazaarTimelineFragment"
             app:destination="@id/bazaarTimelineFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.androidprojectdn2021.fragments.BazaarAddProductFragment"
+        android:label="fragment_add_product"
+        tools:layout="@layout/fragment_add_product" />
 </navigation>

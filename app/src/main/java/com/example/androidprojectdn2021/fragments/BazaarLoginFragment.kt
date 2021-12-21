@@ -16,6 +16,7 @@ import com.example.androidprojectdn2021.R
 import com.example.androidprojectdn2021.databinding.FragmentBazaarLoginFragmentBinding
 import com.example.androidprojectdn2021.repository.Repository
 import com.example.androidprojectdn2021.user.Token.token
+import com.example.androidprojectdn2021.user.UserData.user
 import com.example.androidprojectdn2021.viewmodels.LoginViewModel
 import com.example.androidprojectdn2021.viewmodels.LoginViewModelFactory
 
@@ -37,7 +38,7 @@ class BazaarLoginFragment : Fragment() {
 
         // LOGIN BUTTON
         binding.loginFragmentLogInButton.setOnClickListener {
-            loginViewModel.user.value.let {
+            user.value.let {
                 if (binding.loginFragmentUsernameTE.text?.isEmpty() == true) {
                     Toast.makeText(context, "Username field empty!", Toast.LENGTH_LONG).show()
                 } else if (binding.loginFragmentPasswordTE.text?.isEmpty() == true) {
@@ -68,10 +69,10 @@ class BazaarLoginFragment : Fragment() {
                 Log.d("dnj", "Navigate to MarketActivity")
                 val intent = Intent(activity, MarketActivity::class.java)
                 intent.putExtra("token", token.value)
-                intent.putExtra("username", loginViewModel.user.value?.username)
-                intent.putExtra("email", loginViewModel.user.value?.email)
-                intent.putExtra("phone_number", loginViewModel.user.value?.phone_number)
-                Log.d("dnj", "Login fragment: ${loginViewModel.user.value}")
+                intent.putExtra("username", user.value?.username)
+                intent.putExtra("email", user.value?.email)
+                intent.putExtra("phone_number", user.value?.phone_number)
+                Log.d("dnj", "Login fragment: ${user.value}")
                 activity?.startActivity(intent)
             }
         }

@@ -8,13 +8,14 @@ import com.example.androidprojectdn2021.modelclasses.RegisterRequest
 import com.example.androidprojectdn2021.modelclasses.RegisterResponse
 import com.example.androidprojectdn2021.modelclasses.User
 import com.example.androidprojectdn2021.repository.Repository
+import com.example.androidprojectdn2021.user.UserData.user
 
 class RegisterViewModel(val context: Context, val repository: Repository) : ViewModel() {
-    var user = MutableLiveData<User>()
+    //var user = MutableLiveData<User>()
     var code: MutableLiveData<Int> = MutableLiveData()
 
     init {
-        user.value = User()
+        //user.value = User()
     }
 
     suspend fun register() {

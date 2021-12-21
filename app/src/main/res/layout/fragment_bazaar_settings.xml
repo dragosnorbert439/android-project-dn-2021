@@ -27,9 +27,7 @@
             android:text="Settings"
             android:textAllCaps="false"
             android:textColor="@color/B_white"
-            android:textSize="22sp"
-
-            />
+            android:textSize="22sp"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 

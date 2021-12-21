@@ -14,6 +14,7 @@ import com.example.androidprojectdn2021.R
 import com.example.androidprojectdn2021.databinding.FragmentBazaarLoginFragmentBinding
 import com.example.androidprojectdn2021.databinding.FragmentBazaarRegisterBinding
 import com.example.androidprojectdn2021.repository.Repository
+import com.example.androidprojectdn2021.user.UserData.user
 import com.example.androidprojectdn2021.viewmodels.LoginViewModel
 import com.example.androidprojectdn2021.viewmodels.RegisterViewModel
 import com.example.androidprojectdn2021.viewmodels.RegisterViewModelFactory
@@ -42,7 +43,7 @@ class BazaarRegisterFragment : Fragment() {
 
         // REGISTER BUTTON
         binding.registerFragmentRegisterButton.setOnClickListener {
-            registerViewModel.user.value.let {
+            user.value.let {
                 if (binding.registerFragmentUsernameTE.text?.isEmpty() == true) {
                     Toast.makeText(context,"Username field empty!", Toast.LENGTH_LONG).show()
                 }

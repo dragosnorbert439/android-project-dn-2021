@@ -8,9 +8,10 @@ import com.example.androidprojectdn2021.modelclasses.LoginRequest
 import com.example.androidprojectdn2021.modelclasses.User
 import com.example.androidprojectdn2021.repository.Repository
 import com.example.androidprojectdn2021.user.Token.token
+import com.example.androidprojectdn2021.user.UserData.user
 
 class LoginViewModel(val context: Context, val repository: Repository) : ViewModel() {
-    var user = MutableLiveData<User>()
+    //var user = MutableLiveData<User>()
 
     init {
         user.value = User()

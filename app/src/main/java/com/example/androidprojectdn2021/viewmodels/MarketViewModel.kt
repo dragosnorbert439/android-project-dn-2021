@@ -14,7 +14,6 @@ class MarketViewModel (val repository: Repository) : ViewModel() {
 
     init {
         Log.d("dnj", "MarketViewModel constructor - Token: ${token.value}")
-        getProductsFiltered(hashMapOf())
     }
 
     fun getProducts() {

@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatButton
+import androidx.navigation.Navigation
 import com.example.androidprojectdn2021.R
 
 class BazaarMyFaresFragment : Fragment() {
@@ -17,7 +19,10 @@ class BazaarMyFaresFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_bazaar_my_fares, container, false)
+        val view = inflater.inflate(R.layout.fragment_bazaar_my_fares, container, false)
+
+
+        return view
     }
 
     companion object {

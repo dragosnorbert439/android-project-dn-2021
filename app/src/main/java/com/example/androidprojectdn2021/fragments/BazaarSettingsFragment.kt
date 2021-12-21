@@ -11,10 +11,12 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.androidprojectdn2021.R
 import com.example.androidprojectdn2021.modelclasses.User
 import com.example.androidprojectdn2021.repository.Repository
+import com.example.androidprojectdn2021.user.UserData.user
 import com.example.androidprojectdn2021.viewmodels.MarketViewModel
 import com.example.androidprojectdn2021.viewmodels.MarketViewModelFactory
 import com.example.androidprojectdn2021.viewmodels.UserViewModel
@@ -28,15 +30,6 @@ class BazaarSettingsFragment : Fragment() {
         super.onCreate(savedInstanceState)
         val userViewModelFactory = UserViewModelFactory(Repository())
         userViewModel = ViewModelProvider(this, userViewModelFactory).get(UserViewModel::class.java)
-        if (!userViewModel.initialized) {
-            userViewModel.user.value =
-                User(
-                    username = activity?.intent?.getStringExtra("username").toString(),
-                    password = "",
-                    email = activity?.intent?.getStringExtra("email").toString(),
-                    phone_number = activity?.intent?.getStringExtra("phone_number").toString()
-                )
-        }
     }
 
     override fun onCreateView(
@@ -53,12 +46,12 @@ class BazaarSettingsFragment : Fragment() {
 
         // FILL THE FIELDS
         view.findViewById<AppCompatTextView>(R.id.userNameDisplayTV).text =
-            userViewModel.user.value?.username
+            user.value?.username
         view.findViewById<AppCompatEditText>(R.id.userNameTE)
-            .setText(userViewModel.user.value?.username)
-        view.findViewById<AppCompatEditText>(R.id.emailTE).setText(userViewModel.user.value?.email)
+            .setText(user.value?.username)
+        view.findViewById<AppCompatEditText>(R.id.emailTE).setText(user.value?.email)
         view.findViewById<AppCompatEditText>(R.id.phoneNumberTE)
-            .setText(userViewModel.user.value?.phone_number)
+            .setText(user.value?.phone_number)
 
         // PUBLISH BUTTON
         val publishButton = view.findViewById<AppCompatButton>(R.id.publishButtonSettings)
@@ -72,6 +65,11 @@ class BazaarSettingsFragment : Fragment() {
                         phone_number = view.findViewById<AppCompatEditText>(R.id.phoneNumberTE).text.toString()
                     )
                 )
+            }
+            userViewModel.code.observe(viewLifecycleOwner) {
+                if (userViewModel.code.value == 200) {
+
+                }
             }
         }
 

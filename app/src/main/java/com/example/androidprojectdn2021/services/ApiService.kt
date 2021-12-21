@@ -26,4 +26,10 @@ interface ApiService {
         @Header("token") token: String,
         @Body request: UpdateUserRequest
     ): UpdateUserResponse
-} 
+
+    @POST(Constants.ADD_PRODUCT_URL)
+    suspend fun addProduct(
+        @Header("token") token: String,
+        @Body request: AddProductRequest
+    ): AddProductResponse
+}

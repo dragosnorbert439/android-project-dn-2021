@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.BazaarAddProductFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarTimelineFragment"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/B_dark_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/createFareBackACButtonAPL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/B_dark_grey"
+            android:backgroundTint="@color/B_dark_grey"
+            android:drawableLeft="@drawable/ic_arrow_to_left"
+            android:padding="8dp"
+            android:text="Create your fare"
+            android:textAllCaps="false"
+            android:textColor="@color/B_white"
+            android:textSize="22sp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewAddProductLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+
+            <ImageView
+                android:id="@+id/productImageAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:background="@color/B_turqoise"
+                android:src="@drawable/ic_baseline_shopping_bag_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Switch
+                android:id="@+id/activeSwitchAddProductLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:text="Inactive"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/B_turqoise"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productImageAddProdLayout"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <TextView
+                android:id="@+id/dateTVAddProductLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today"
+                android:textColor="@color/B_black"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productImageAddProdLayout" />
+
+            <TextView
+                android:id="@+id/detailsTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Give us details about your fare"
+                android:textColor="@color/B_black"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activeSwitchAddProductLayout" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleTITEAddProductLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_field_bg2"
+                android:hint="Title"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:textColor="@color/B_black"
+                android:textColorHint="@color/B_black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsTV" />
+
+            <TextView
+                android:id="@+id/titleAuxTVAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="0/30"
+                android:textColorHint="@color/B_light_grey"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTITEAddProductLayout" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/priceTITEAddProductLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_field_bg2"
+                android:hint="Price/amount"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:textColor="@color/B_black"
+                android:textColorHint="@color/B_black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/dropDownSpinnerCurrencyAPL"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleAuxTVAddProdLayout" />
+
+            <Spinner
+                android:id="@+id/dropDownSpinnerCurrencyAPL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleAuxTVAddProdLayout"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/priceTITEAuxAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="0/10"
+                android:textColorHint="@color/B_light_grey"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/priceTITEAddProductLayout" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amountTITEAddProdLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_field_bg2"
+                android:hint="Available amount"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:textColor="@color/B_black"
+                android:textColorHint="@color/B_black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/dropDownSpinnerAmountAPL"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/priceTITEAuxAddProdLayout" />
+
+            <Spinner
+                android:id="@+id/dropDownSpinnerAmountAPL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/priceTITEAuxAddProdLayout"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/amountAuxTVAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="0/10"
+                android:textColorHint="@color/B_light_grey"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amountTITEAddProdLayout" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descriptionTITEAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_field_bg2"
+                android:hint="Short description"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:textColor="@color/B_black"
+                android:textColorHint="@color/B_black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amountAuxTVAddProdLayout" />
+
+            <TextView
+                android:id="@+id/descriptionAuxTVAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="0/150"
+                android:textColorHint="@color/B_light_grey"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTITEAddProdLayout" />
+
+            <TextView
+                android:id="@+id/contactDetailsTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Contact details"
+                android:textColor="@color/B_black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionAuxTVAddProdLayout" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userNameTITEAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_field_bg2"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:text="username"
+                android:textColor="@color/B_black"
+                android:textColorHint="@color/B_black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactDetailsTV" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailTITEAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_field_bg2"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:text="email"
+                android:textColor="@color/B_black"
+                android:textColorHint="@color/B_black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userNameTITEAddProdLayout" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneNumberTITEAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_field_bg2"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:text="phone number"
+                android:textColor="@color/B_black"
+                android:textColorHint="@color/B_black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailTITEAddProdLayout" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/previewMyFairACButtonAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_button_2"
+                android:text="Preview my fair"
+                android:textAllCaps="false"
+                android:textColor="@color/B_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phoneNumberTITEAddProdLayout"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/launchMyFairACButtonAddProdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_button_2"
+                android:text="Launch my fair"
+                android:textAllCaps="false"
+                android:textColor="@color/B_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/previewMyFairACButtonAddProdLayout"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

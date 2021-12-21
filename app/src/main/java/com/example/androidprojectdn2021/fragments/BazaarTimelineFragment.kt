@@ -1,7 +1,6 @@
 package com.example.androidprojectdn2021.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,13 +16,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.androidprojectdn2021.R
 import com.example.androidprojectdn2021.adapters.DataAdapter
 import com.example.androidprojectdn2021.modelclasses.Product
-import com.example.androidprojectdn2021.modelclasses.User
 import com.example.androidprojectdn2021.repository.Repository
 import com.example.androidprojectdn2021.viewmodels.MarketViewModel
 import com.example.androidprojectdn2021.viewmodels.MarketViewModelFactory
 import com.example.androidprojectdn2021.viewmodels.UserViewModel
-import com.example.androidprojectdn2021.viewmodels.UserViewModelFactory
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.coroutines.coroutineScope
 
 class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
     DataAdapter.OnItemLongClickListener, DataAdapter.OnOrderButtonClickListener,
@@ -55,6 +54,10 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
     ): View? {
         val view = inflater.inflate(R.layout.fragment_bazaar_timeline, container, false)
 
+        lifecycleScope.launchWhenCreated {
+            marketViewModel.getProductsFiltered(hashMapOf())
+        }
+
         // RECYCLER VIEW
         recycler_view = view.findViewById(R.id.recyclerViewTimeline)
         setupRecyclerView()
@@ -66,7 +69,7 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
         }
 
         // SEARCH
-        searchButton = view.findViewById(R.id.searchButtonActivityMarket)
+        searchButton = view.findViewById(R.id.searchButtonMyMarketFragment)
         searchView = view.findViewById(R.id.searchView)
         searchView.visibility = View.GONE
         setUpSearchButton()
@@ -75,7 +78,7 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
         switch = view.findViewById(R.id.switchTimelineFragment)
         setUpSwitch()
         filterView = view.findViewById(R.id.filterView)
-        filterButton = view.findViewById(R.id.filterButtonActivityMarket)
+        filterButton = view.findViewById(R.id.filterButtonTimelineFragment)
         searchInputText = view.findViewById(R.id.searchTextInput)
         setUpFilterButton()
 
@@ -104,7 +107,6 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
 
     private fun setUpFilterButton() {
         filterButton.setOnClickListener {
-            Toast.makeText(context, "Filter button clicked", Toast.LENGTH_SHORT).show()
             if (filterView.isVisible) {
                 filterView.visibility = View.GONE
             } else {
@@ -131,7 +133,6 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
 
     private fun setUpSearchButton() {
         searchButton.setOnClickListener {
-            Toast.makeText(context, "Search button clicked", Toast.LENGTH_SHORT).show()
             if (searchView.isVisible) {
                 searchView.visibility = View.GONE
                 if (searchInputText.text?.isEmpty() == false) {
@@ -148,7 +149,6 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
 
     private fun setUpSettingsIV(view: View) {
         settingsIV.setOnClickListener {
-            Toast.makeText(context, "Settings clicked", Toast.LENGTH_SHORT).show()
             Navigation.findNavController(view)
                 .navigate(R.id.action_bazaarTimelineFragment_to_bazaarSettingsFragment)
         }
@@ -180,7 +180,6 @@ class BazaarTimelineFragment : Fragment(), DataAdapter.OnItemClickListener,
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        Toast.makeText(activity?.applicationContext, "item selected", Toast.LENGTH_SHORT).show()
         when (spinner.getItemAtPosition(position).toString()) {
             "Price" -> {
                 sortMap["sort"] = "{\"price_per_unit\":$latestOldest}"

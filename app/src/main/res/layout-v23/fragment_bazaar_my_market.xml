@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_bazaar_my_market"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.BazaarMyMarketFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarMyMarketFragment"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/B_dark_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewUserImageTimelineFragment"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/userIVMyMarketFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_avatar" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <Button
+                android:id="@+id/searchButtonMyMarketFragment"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/ic_lense"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cardViewUserImageTimelineFragment"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_bazaar_logo_coloured"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarMyMarketFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMyMarket"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/B_light_grey"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addProductButtonMyMarketFragment"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_button_3"
+            android:elevation="6dp"
+            android:foreground="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,UnusedAttribute" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
