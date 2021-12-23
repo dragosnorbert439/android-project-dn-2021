@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/B_light_grey"
     android:id="@+id/fragment_bazaar_my_fares"
-    tools:context=".fragments.BazaarMyFaresFragment">
+    tools:context=".market.myfares.BazaarMyFaresFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"

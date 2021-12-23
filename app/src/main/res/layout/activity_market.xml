@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.AndroidProjectDN2021.Bazaar"
-    tools:context=".MarketActivity">
+    tools:context=".market.MarketActivity">
 
     <fragment
         android:id="@+id/fragmentContainerViewMarket"

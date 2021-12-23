@@ -8,4 +8,6 @@ object Constants {
     const val GET_PRODUCT_URL = "products"
     const val UPDATE_USER_URL = "user/update"
     const val ADD_PRODUCT_URL = "products/add"
+    const val REMOVE_PRODUCT = "products/remove"
+    const val REFRESH_TOKEN = "user/refresh"
 }

@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loadingFragment">
+    app:startDestination="@id/bazaarSplashFragment">
     <fragment
         android:id="@+id/bazaarSplashFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarSplashFragment"
+        android:name="com.example.androidprojectdn2021.login.splash.BazaarSplashFragment"
         android:label="fragment_bazaar_splash"
         tools:layout="@layout/fragment_bazaar_splash" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/loadingFragment"
-        android:name="com.example.androidprojectdn2021.fragments.LoadingFragment"
+        android:name="com.example.androidprojectdn2021.login.loading.LoadingFragment"
         android:label="fragment_loading_fragment"
         tools:layout="@layout/fragment_loading_fragment" >
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/bazaarLoginFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarLoginFragment"
+        android:name="com.example.androidprojectdn2021.login.login.BazaarLoginFragment"
         android:label="fragment_bazaar_login_fragment"
         tools:layout="@layout/fragment_bazaar_login_fragment" >
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/bazaarRegisterFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarRegisterFragment"
+        android:name="com.example.androidprojectdn2021.login.register.BazaarRegisterFragment"
         android:label="fragment_bazaar_register"
         tools:layout="@layout/fragment_bazaar_register" >
         <action
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/bazaarForgotPassword"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarForgotPasswordFragment"
+        android:name="com.example.androidprojectdn2021.login.forgotpassword.BazaarForgotPasswordFragment"
         android:label="fragment_bazaar_forgot_password"
         tools:layout="@layout/fragment_bazaar_forgot_password" >
         <action

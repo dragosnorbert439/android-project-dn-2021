@@ -1,8 +1,6 @@
 package com.example.androidprojectdn2021.adapters
 
 import android.content.Context
-import android.content.res.loader.ResourcesLoader
-import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.Resource
 import com.example.androidprojectdn2021.R
 import com.example.androidprojectdn2021.modelclasses.Product
 
@@ -21,15 +17,20 @@ class DataAdapterMyProducts(
     private var list: ArrayList<Product>,
     private val context: Context,
     private val onItemClickListener: OnItemClickListener,
-) :
-    RecyclerView.Adapter<DataAdapterMyProducts.DataViewHolder>() {
+    private val onItemLongClickListener: OnItemLongClickListener,
+):  RecyclerView.Adapter<DataAdapterMyProducts.DataViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
 
+    interface OnItemLongClickListener {
+        fun onItemLongClick(position: Int)
+    }
+
     // 1. user defined ViewHolder type - Embedded class!
-    inner class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    inner class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener,
+        View.OnLongClickListener {
         val textViewName: TextView = itemView.findViewById(R.id.productNameTVOwnProductLayout)
         val textViewPrice: TextView = itemView.findViewById(R.id.productPriceTVOwnProductLayout)
         val textViewSeller: TextView = itemView.findViewById(R.id.userNameTVOwnProductLayout)
@@ -39,11 +40,18 @@ class DataAdapterMyProducts(
 
         init {
             itemView.setOnClickListener(this)
+            itemView.setOnLongClickListener(this)
         }
 
         override fun onClick(p0: View?) {
             val currentPosition = this.adapterPosition
             onItemClickListener.onItemClick(currentPosition)
+        }
+
+        override fun onLongClick(p0: View?): Boolean {
+            val currentPosition = this.adapterPosition
+            onItemLongClickListener.onItemLongClick(currentPosition)
+            return true
         }
     }
 

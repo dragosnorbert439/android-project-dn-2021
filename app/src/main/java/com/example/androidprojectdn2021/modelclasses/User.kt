@@ -70,4 +70,12 @@ data class UpdateUserResponse (
     var timestamp: Long
 )
 
+// TOKEN REFRESH
+@JsonClass(generateAdapter = true)
+data class RefreshTokenResponse (
+    var token: String,
+    var creation_time: Long,
+    var refresh_time: Long
+)
+
 

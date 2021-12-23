@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/B_light_grey"
-    tools:context=".fragments.BazaarTimelineFragment">
+    tools:context=".market.timeline.BazaarTimelineFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarTimelineFragment"

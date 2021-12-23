@@ -7,39 +7,63 @@
 
     <fragment
         android:id="@+id/bazaarTimelineFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarTimelineFragment"
+        android:name="com.example.androidprojectdn2021.market.timeline.BazaarTimelineFragment"
         android:label="fragment_bazaar_timeline"
         tools:layout="@layout/fragment_bazaar_timeline" >
         <action
             android:id="@+id/action_bazaarTimelineFragment_to_bazaarSettingsFragment"
             app:destination="@id/bazaarSettingsFragment" />
+        <action
+            android:id="@+id/action_bazaarTimelineFragment_to_viewProductFragment"
+            app:destination="@id/viewProductFragment" />
     </fragment>
     <fragment
         android:id="@+id/bazaarMyMarketFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarMyMarketFragment"
+        android:name="com.example.androidprojectdn2021.market.mymarket.BazaarMyMarketFragment"
         android:label="fragment_bazaar_my_market"
         tools:layout="@layout/fragment_bazaar_my_market" >
         <action
             android:id="@+id/action_bazaarMyMarketFragment_to_addProductFragment"
             app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_bazaarMyMarketFragment_to_bazaarSettingsFragment"
+            app:destination="@id/bazaarSettingsFragment" />
+        <action
+            android:id="@+id/action_bazaarMyMarketFragment_to_viewProductFragment"
+            app:destination="@id/viewProductFragment" />
     </fragment>
     <fragment
         android:id="@+id/bazaarMyFaresFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarMyFaresFragment"
+        android:name="com.example.androidprojectdn2021.market.myfares.BazaarMyFaresFragment"
         android:label="fragment_bazaar_my_fares"
         tools:layout="@layout/fragment_bazaar_my_fares" />
     <fragment
         android:id="@+id/bazaarSettingsFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarSettingsFragment"
+        android:name="com.example.androidprojectdn2021.market.profile.BazaarSettingsFragment"
         android:label="fragment_bazaar_settings"
         tools:layout="@layout/fragment_bazaar_settings" >
         <action
             android:id="@+id/action_bazaarSettingsFragment_to_bazaarTimelineFragment"
             app:destination="@id/bazaarTimelineFragment" />
+        <action
+            android:id="@+id/action_bazaarSettingsFragment_to_bazaarMyMarketFragment"
+            app:destination="@id/bazaarMyMarketFragment" />
     </fragment>
     <fragment
         android:id="@+id/addProductFragment"
-        android:name="com.example.androidprojectdn2021.fragments.BazaarAddProductFragment"
+        android:name="com.example.androidprojectdn2021.market.addproduct.BazaarAddProductFragment"
         android:label="fragment_add_product"
         tools:layout="@layout/fragment_add_product" />
+    <fragment
+        android:id="@+id/viewProductFragment"
+        android:name="com.example.androidprojectdn2021.market.viewproduct.ViewProductFragment"
+        android:label="fragment_view_product"
+        tools:layout="@layout/fragment_view_product" >
+        <action
+            android:id="@+id/action_viewProductFragment_to_bazaarTimelineFragment"
+            app:destination="@id/bazaarTimelineFragment" />
+        <action
+            android:id="@+id/action_viewProductFragment_to_bazaarMyMarketFragment"
+            app:destination="@id/bazaarMyMarketFragment" />
+    </fragment>
 </navigation>

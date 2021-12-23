@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/B_dark"
-    tools:context=".fragments.BazaarSettingsFragment">
+    tools:context=".market.profile.BazaarSettingsFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"

@@ -28,12 +28,12 @@ data class GetProductsRequest (
     var limit: Int
 )
 
-@JsonClass(generateAdapter = true)
+@JsonClass(generateAdapter = false)
 data class AddProductRequest(
     var title: String,
     var description: String,
     var price_per_unit: String,
-    var unit: Int,
+    var units: String,
     var is_active: Boolean,
     var rating: Double,
     var amount_type: String,
@@ -53,5 +53,15 @@ data class AddProductResponse(
     var creation_time: Long
 )
 
+@JsonClass(generateAdapter = true)
+data class RemoveProductRequest(
+    var product_id: String
+)
 
+@JsonClass(generateAdapter = true)
+data class RemoveProductResponse(
+    var message: String,
+    var product_id: String,
+    var deletion_time: Long
+)
 

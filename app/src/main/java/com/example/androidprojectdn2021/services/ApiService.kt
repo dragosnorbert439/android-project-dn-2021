@@ -1,6 +1,7 @@
 package com.example.androidprojectdn2021.services
 
 import com.example.androidprojectdn2021.modelclasses.*
+import com.example.androidprojectdn2021.user.Token
 import com.example.androidprojectdn2021.utils.Constants
 import retrofit2.http.*
 
@@ -27,9 +28,35 @@ interface ApiService {
         @Body request: UpdateUserRequest
     ): UpdateUserResponse
 
+// doesn't work - probably no adapter on the back-end side
+//    @POST(Constants.ADD_PRODUCT_URL)
+//    suspend fun addProduct(
+//        @Header("token") token: String,
+//        @Body request: AddProductRequest
+//    ): AddProductResponse
+
+    @Multipart
     @POST(Constants.ADD_PRODUCT_URL)
     suspend fun addProduct(
-        @Header("token") token: String,
-        @Body request: AddProductRequest
+        @Header("token") token: String = Token.token.value.toString(),
+        @Part( "title") title: String,
+        @Part("description") description: String,
+        @Part("price_per_unit") price_per_unit: String,
+        @Part("units") units: String,
+        @Part("is_active") is_active: Boolean,
+        @Part("rating") rating: Double,
+        @Part("amount_type") amount_type: String,
+        @Part("price_type") price_type: String
     ): AddProductResponse
+
+    @POST(Constants.REMOVE_PRODUCT)
+    suspend fun removeProduct(
+        @Header("token") token: String,
+        @Query("product_id") product_id: String
+    ): RemoveProductResponse
+
+    @GET(Constants.REFRESH_TOKEN)
+    suspend fun refreshToken(
+        @Header("token") token: String = Token.token.value.toString()
+    ): RefreshTokenResponse
 }
